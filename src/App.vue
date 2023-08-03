@@ -4,10 +4,10 @@
       :active-page="activePage"
       :nav-link-click="(index)=>activePage=index"
   ></navbar>
-<!--  <page-viewer-->
-<!--      v-if="pages.length>0"-->
-<!--       :page="pages[activePage]">-->
-<!--  </page-viewer>-->
+  <page-viewer
+      v-if="pages.length>0"
+       :page="pages[activePage]">
+  </page-viewer>
 
   <create-page
   :page-created="pageCreated"
@@ -40,7 +40,8 @@ export default {
       this.pages = data;
     },
     pageCreated(pageObj){
-      console.log(pageObj)
+      // console.log(pageObj)
+      this.pages.push(pageObj);
     }
   }
 }
